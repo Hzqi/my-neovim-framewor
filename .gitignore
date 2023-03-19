@@ -1,0 +1,8 @@
+# Mac
+._*
+
+/.clj-kondo
+/.lsp
+/target
+/lib
+/node_modules
