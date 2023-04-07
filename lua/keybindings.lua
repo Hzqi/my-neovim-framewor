@@ -49,3 +49,37 @@ map("n", "s<Right>", ":vertical resize +10<CR>", opt)
 -- 窗口上下比例
 map("n", "s<Up>", ":resize +10<CR>", opt)
 map("n", "s<Down>", ":resize -10<CR>", opt)
+
+-- Terminal相关
+map("n", "<leader>t", ":sp | terminal<CR>", opt)
+map("n", "<leader>vt", ":vsp | terminal<CR>", opt)
+map("t", "<Esc>", "<C-\\><C-n>", opt)
+map("t", "<A-Left>", [[ <C-\><C-N><C-w>h ]], opt)
+map("t", "<A-Down>", [[ <C-\><C-N><C-w>j ]], opt)
+map("t", "<A-Up>", [[ <C-\><C-N><C-w>k ]], opt)
+map("t", "<A-Right>", [[ <C-\><C-N><C-w>l ]], opt)
+
+-- visual模式下缩进代码
+-- 反缩进
+map("v", "<", "<gv", opt)
+map("v", "<S-Tab>", "<gv", opt) -- 在warp下无效，是warp的bug，未修复
+-- 缩进
+map("v", ">", ">gv", opt)
+map("v", "<tab>", ">gv", opt)
+-- 上下移动选中文本
+map("v", "J", ":move '>+1<CR>gv-gv", opt)
+map("v", "K", ":move '<-2<CR>gv-gv", opt)
+
+-- 上下滚动浏览
+map("n", "<C-j>", "4j", opt)
+map("n", "<C-k>", "4k", opt)
+-- 左右滚动
+map("n", "<C-h>", "4h", opt)
+map("n", "<C-l>", "4l",opt)
+-- ctrl u / ctrl + d  只移动9行，默认移动半屏
+map("n", "<C-u>", "9k", opt)
+map("n", "<C-d>", "9j", opt)
+
+-- insert 模式下，跳到行首行尾
+map("i", "<C-h>", "<ESC>I", opt)
+map("i", "<C-l>", "<ESC>A", opt)
