@@ -5,7 +5,7 @@ packer.startup({
         use 'wbthomason/packer.nvim'
         -- 你的插件列表...
         -- conjure
-        use 'Olical/conjure'
+        -- use 'Olical/conjure'
         
         -- UI theme
         -- tokyonight
@@ -16,6 +16,9 @@ packer.startup({
         use("ful1e5/onedark.nvim")
         -- nightfox
         use("EdenEast/nightfox.nvim")
+
+        -- nvim-tree (新增)
+        use({ "kyazdani42/nvim-tree.lua", requires = "kyazdani42/nvim-web-devicons" })
     end,
     config = {
         -- 并发数限制
