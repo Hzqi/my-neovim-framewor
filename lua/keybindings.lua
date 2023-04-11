@@ -31,6 +31,10 @@ map("n", "sh", ":sp<CR>", opt)
 map("n", "sc", "<C-w>c", opt)
 -- 关闭其他
 map("n", "so", "<C-w>o", opt)
+-- 保存退出
+map("n", "WQ", ":wq<CR>", opt)
+-- 直接退出
+map("n", "QQ", ":q!<CR>", opt)
 
 -- Alt + hjkl  窗口之间跳转
 -- 向左
@@ -89,6 +93,19 @@ map("i", "<C-l>", "<ESC>A", opt)
 
 -- 插件快捷键
 local pluginKeys = {}
+
+-- bufferline
+-- 左右Tab切换
+map("n", "<C-h>", ":BufferLineCyclePrev<CR>", opt)
+map("n", "<Leader><Right>", ":BufferLineCyclePrev<CR>", opt)
+map("n", "<C-l>", ":BufferLineCycleNext<CR>", opt)
+map("n", "<leader><Left>", ":BufferLineCycleNext<CR>", opt)
+-- 关闭
+--"moll/vim-bbye"
+map("n", "<leader>w", ":Bdelete!<CR>", opt)
+map("n", "<leader>bl", ":BufferLineCloseRight<CR>", opt)
+map("n", "<leader>bh", ":BufferLineCloseLeft<CR>", opt)
+map("n", "<leader>bc", ":BufferLinePickClose<CR>", opt)
 
 -- nvim-tree
 -- alt + m 键打开关闭tree
