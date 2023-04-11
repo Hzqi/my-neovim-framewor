@@ -7,3 +7,6 @@
 /target
 /lib
 /node_modules
+
+# 不用带着插件编译后的产物
+*_compiled.lua
