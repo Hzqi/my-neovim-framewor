@@ -183,9 +183,7 @@ map("n", "F=", "gg=G", opt)
 
 
 -- git (vgit)
--- pluginKeys.gitMapKeys = {
---   [ "<Up>" ] = function() require('vgit').hunk_up() end,
---   [ "<Down>" ] = function() require('vgit').hunk_down() end,
--- }
+map("n", "<leader>gd", ":VGit project_diff_preview<CR>", opt)
+map("n", "<leader>gc", ":VGit project_commit_preview<CR>", opt)
 
 return pluginKeys
