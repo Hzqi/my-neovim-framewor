@@ -8,7 +8,7 @@ end
 db.custom_footer = {
   "",
   "",
-  "https://github.com/nshen/learn-neovim-lua",
+  "From VSCode To NVIM~",
 }
 
 db.setup({
@@ -30,7 +30,7 @@ db.setup({
     },
     center = {
       {
-        icon = "⚡  ",
+        icon = "⚡ ",
         desc = "Projects                            ",
         action = "Telescope projects",
       },
@@ -53,7 +53,7 @@ db.setup({
     footer = {
       "",
       "",
-      "https://github.com/nshen/learn-neovim-lua",
+      "From VSCode To NVIM~",
     }
   }
 })

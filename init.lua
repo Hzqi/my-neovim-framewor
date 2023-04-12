@@ -16,3 +16,5 @@ require("plugin-config.lualine")
 require("plugin-config.dashboard")
 -- project
 require("plugin-config.project")
+-- nvim-treesitter
+require("plugin-config.nvim-treesitter")

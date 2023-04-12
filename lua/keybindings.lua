@@ -156,4 +156,10 @@ pluginKeys.nvimTreeList = {
   { key = "p", action = "paste" },
   { key = "s", action = "system_open" },
 }
+
+-- treesitter
+-- 全文件格式化
+map("n", "F=", "gg=G", opt)
+
+
 return pluginKeys

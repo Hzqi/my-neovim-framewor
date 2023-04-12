@@ -3,7 +3,7 @@ packer.startup({
     function(use)
         -- Packer 可以管理自己本身
         use 'wbthomason/packer.nvim'
-        use 'nvim-treesitter/nvim-treesitter'
+        use({'nvim-treesitter/nvim-treesitter', run = ":TSUpdate"})
         -- 你的插件列表...
         -- conjure
         -- use 'Olical/conjure'
