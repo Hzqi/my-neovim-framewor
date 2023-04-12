@@ -12,3 +12,7 @@ require("plugin-config.nvim-tree")
 require("plugin-config.bufferline")
 -- 底部状态栏
 require("plugin-config.lualine")
+-- dashboard
+require("plugin-config.dashboard")
+-- project
+require("plugin-config.project")
