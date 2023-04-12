@@ -3,6 +3,7 @@ packer.startup({
     function(use)
         -- Packer 可以管理自己本身
         use 'wbthomason/packer.nvim'
+        use 'nvim-treesitter/nvim-treesitter'
         -- 你的插件列表...
         -- conjure
         -- use 'Olical/conjure'
@@ -26,6 +27,11 @@ packer.startup({
         -- lualine
         use({ "nvim-lualine/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons" } })
         use("arkav/lualine-lsp-progress")
+        
+        -- telescope
+        use { 'nvim-telescope/telescope.nvim', requires = { "nvim-lua/plenary.nvim" } }
+        -- telescope extensions
+        use "LinArcX/telescope-env.nvim"
     end,
     config = {
         -- 并发数限制
