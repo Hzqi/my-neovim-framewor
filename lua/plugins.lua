@@ -38,6 +38,9 @@ packer.startup({
 
         -- project
         use("ahmedkhalf/project.nvim")
+        
+        -- lsp相关
+        
     end,
     config = {
         -- 并发数限制

@@ -21,6 +21,26 @@ local map = vim.api.nvim_set_keymap
 -- silent 为 true，表示不会输出多余的信息。
 local opt = {noremap = true, silent = true }
 
+-- MacOS的一些在Neovid里Command的配置
+vim.g.neovide_input_use_logo = true
+-- 粘贴
+vim.opt.clipboard = "unnamedplus"
+map("n", "<D-v>", "p", opt)
+map("i", "<D-v>", "<C-R>+", opt)
+map("v", "<D-v>", "<C-R>+", opt)
+-- 复制
+map("n", "<D-c>", "", opt)
+map("i", "<D-c>", "", opt)
+map("v", "<D-c>", "y", opt)
+-- 撤回
+map("n", "<D-z>", ":undo<CR>", opt)
+map("i", "<D-z>", "<ESC>:undo<CR>A", opt)
+-- 重做
+map("n", "<D-S-z>", ":redo<CR>", opt)
+map("i", "<D-S-z>", "<ESC>:redo<CR>A", opt)
+-- 保存
+map("n", "<D-s>", ":w<CR>", opt)
+map("i", "<D-s>", "<ESC>:w<CR>A", opt)
 
 -- 取消 s 默认功能
 map("n", "s", "", opt)
