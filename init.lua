@@ -18,3 +18,5 @@ require("plugin-config.dashboard")
 require("plugin-config.project")
 -- nvim-treesitter
 require("plugin-config.nvim-treesitter")
+-- git
+require("plugin-config.git")

@@ -39,6 +39,11 @@ packer.startup({
         -- project
         use("ahmedkhalf/project.nvim")
         
+        -- git
+        -- use({ 'TimUntersberger/neogit', requires = {'nvim-lua/plenary.nvim', 'sindrets/diffview.nvim'} })
+        -- use('kdheepak/lazygit.nvim')
+        use({'Hzqi/vgit.nvim', requires = {'nvim-lua/plenary.nvim'}})
+
         -- lsp相关
         
     end,

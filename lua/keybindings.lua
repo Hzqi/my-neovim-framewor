@@ -182,4 +182,10 @@ pluginKeys.nvimTreeList = {
 map("n", "F=", "gg=G", opt)
 
 
+-- git (vgit)
+-- pluginKeys.gitMapKeys = {
+--   [ "<Up>" ] = function() require('vgit').hunk_up() end,
+--   [ "<Down>" ] = function() require('vgit').hunk_down() end,
+-- }
+
 return pluginKeys
