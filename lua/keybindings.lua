@@ -44,6 +44,7 @@ map("i", "<D-s>", "<ESC>:w<CR>A", opt)
 
 -- 取消 s 默认功能
 map("n", "s", "", opt)
+map("n", "r", "", opt)
 -- windows 分屏快捷键
 map("n", "sv", ":vsp<CR>", opt)
 map("n", "sh", ":sp<CR>", opt)
@@ -106,6 +107,12 @@ map("n", "<C-l>", "4l",opt)
 -- ctrl u / ctrl + d  只移动9行，默认移动半屏
 map("n", "<C-u>", "9k", opt)
 map("n", "<C-d>", "9j", opt)
+
+-- MacOS下的移动
+map("n", "<D-Up>", "4k", opt)
+map("n", "<D-Down>", "4j", opt)
+map("n", "<D-Left>", "4h", opt)
+map("n", "<D-Right>", "4l", opt) 
 
 -- insert 模式下，跳到行首行尾
 map("i", "<C-h>", "<ESC>I", opt)
@@ -185,5 +192,52 @@ map("n", "F=", "gg=G", opt)
 -- git (vgit)
 map("n", "<leader>gd", ":VGit project_diff_preview<CR>", opt)
 map("n", "<leader>gc", ":VGit project_commit_preview<CR>", opt)
+-- 向上向下翻diff
+map("n", "g<Up>", ":VGit hunk_up<CR>", opt)
+map("n", "g<Down>", ":VGit hunk_down<CR>", opt)
+
+-- lsp快捷键
+-- lsp 回调函数快捷键设置
+pluginKeys.mapLSP = function(mapbuf)
+  -- go xx
+  mapbuf("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opt)
+end
+-- 上面部分代码不行，直接使用map试试
+map("n", "grn", ":Lspsaga rename<CR>", opt)
+map("n", "gca", ":Lspsaga code_action<CR>", opt)
+map("n", "gh", ":Lspsaga hover_doc<CR>", opt)
+map("n", "gr", ":Lspsaga lsp_finder<CR>", opt)
+map("n", "gp", ":Lspsaga show_line_diagnostics<CR>", opt)
+
+-- 补全
+-- nvim-cmp 自动补全
+pluginKeys.cmp = function(cmp)
+    return {
+        -- 出现补全
+        ["<A-n>"] = cmp.mapping(cmp.mapping.complete(), {"i", "c"}),
+        ["<D-n>"] = cmp.mapping(cmp.mapping.complete(), {"i", "c"}),
+        -- 取消
+        ["<Right>"] = cmp.mapping({
+            i = cmp.mapping.abort(),
+            c = cmp.mapping.close()
+        }),
+        -- 上一个
+        ["<C-k>"] = cmp.mapping.select_prev_item(),
+        ["<D-Up>"] = cmp.mapping.select_prev_item(),
+        ["<Up>"] = cmp.mapping.select_prev_item(),
+        -- 下一个
+        ["<C-j>"] = cmp.mapping.select_next_item(),
+        ["<Down>"] = cmp.mapping.select_next_item(),
+        --[">"] = cmp.mapping.select_next_item(),
+        -- 确认
+        ["<CR>"] = cmp.mapping.confirm({
+            select = true,
+            behavior = cmp.ConfirmBehavior.Replace
+        }),
+        -- 如果窗口内容太多，可以滚动
+        ["<C-u>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), {"i", "c"}),
+        ["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(4), {"i", "c"}),
+    }
+end
 
 return pluginKeys

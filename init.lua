@@ -20,3 +20,11 @@ require("plugin-config.project")
 require("plugin-config.nvim-treesitter")
 -- git
 require("plugin-config.git")
+-- lsp
+require("lsp.setup")
+-- lsp-cmp
+require("lsp.cmp")
+-- lsp-ui
+require("lsp.ui")
+-- indent-blankline 范围线
+require("plugin-config.indent-blankline")

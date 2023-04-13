@@ -7,7 +7,7 @@ packer.startup({
         -- 你的插件列表...
         -- conjure
         -- use 'Olical/conjure'
-        
+
         -- UI theme
         -- tokyonight
         use("folke/tokyonight.nvim")
@@ -27,7 +27,7 @@ packer.startup({
         -- lualine
         use({ "nvim-lualine/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons" } })
         use("arkav/lualine-lsp-progress")
-        
+
         -- telescope
         use { 'nvim-telescope/telescope.nvim', requires = { "nvim-lua/plenary.nvim" } }
         -- telescope extensions
@@ -38,12 +38,35 @@ packer.startup({
 
         -- project
         use("ahmedkhalf/project.nvim")
-        
+
         -- git
         use({'tanvirtin/vgit.nvim', requires = {'nvim-lua/plenary.nvim'}})
 
         -- lsp相关
-        
+        use({ "williamboman/mason.nvim" })
+        use({ "williamboman/mason-lspconfig.nvim" })
+        -- use("williamboman/nvim-lsp-installer")
+        use({ "neovim/nvim-lspconfig" })
+        -- 补全
+        -- 补全引擎
+        use("hrsh7th/nvim-cmp")
+        -- snippet 引擎
+        use("hrsh7th/vim-vsnip")
+        -- 补全源
+        use("hrsh7th/cmp-vsnip")
+        use("hrsh7th/cmp-nvim-lsp") -- { name = nvim_lsp }
+        use("hrsh7th/cmp-buffer") -- { name = 'buffer' },
+        use("hrsh7th/cmp-path") -- { name = 'path' }
+        use("hrsh7th/cmp-cmdline") -- { name = 'cmdline' }
+        -- 常见语言代码段
+        use("rafamadriz/friendly-snippets")
+        -- lsp-ui
+        use("onsails/lspkind-nvim")
+        -- indent-blankline 范围线
+        use("lukas-reineke/indent-blankline.nvim")
+        -- lsp查看功能的美化
+        use("tami5/lspsaga.nvim" )
+
     end,
     config = {
         -- 并发数限制
