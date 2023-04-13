@@ -67,6 +67,9 @@ packer.startup({
         -- lsp查看功能的美化
         use("tami5/lspsaga.nvim" )
 
+        -- clojure
+        use("Olical/conjure")
+
     end,
     config = {
         -- 并发数限制

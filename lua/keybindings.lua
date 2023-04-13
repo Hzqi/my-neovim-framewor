@@ -79,8 +79,8 @@ map("n", "s<Up>", ":resize +10<CR>", opt)
 map("n", "s<Down>", ":resize -10<CR>", opt)
 
 -- Terminal相关
-map("n", "<leader>t", ":sp | terminal<CR>", opt)
-map("n", "<leader>vt", ":vsp | terminal<CR>", opt)
+map("n", "<leader>T", ":sp | terminal<CR>", opt)
+--map("n", "<leader>vt", ":vsp | terminal<CR>", opt)
 map("t", "<Esc>", "<C-\\><C-n>", opt)
 map("t", "<A-Left>", [[ <C-\><C-N><C-w>h ]], opt)
 map("t", "<A-Down>", [[ <C-\><C-N><C-w>j ]], opt)
@@ -124,9 +124,9 @@ local pluginKeys = {}
 -- bufferline
 -- 左右Tab切换
 map("n", "<C-h>", ":BufferLineCyclePrev<CR>", opt)
-map("n", "<Leader><Right>", ":BufferLineCyclePrev<CR>", opt)
+map("n", "<Leader><Right>", ":BufferLineCycleNext<CR>", opt)
 map("n", "<C-l>", ":BufferLineCycleNext<CR>", opt)
-map("n", "<leader><Left>", ":BufferLineCycleNext<CR>", opt)
+map("n", "<leader><Left>", ":BufferLineCyclePrev<CR>", opt)
 -- 关闭
 --"moll/vim-bbye"
 map("n", "<leader>w", ":Bdelete!<CR>", opt)
@@ -162,7 +162,7 @@ pluginKeys.telescopeList = {
 -- nvim-tree
 -- alt + m 键打开关闭tree
 map("n", "<A-m>", ":NvimTreeToggle<CR>", opt)
-map("n", "<leader>m", ":NvimTreeToggle<CR>", opt)
+map("n", "<leader>tt", ":NvimTreeToggle<CR>", opt)
 -- 列表快捷键
 pluginKeys.nvimTreeList = {
   -- 打开文件或文件夹
@@ -190,7 +190,7 @@ map("n", "F=", "gg=G", opt)
 
 
 -- git (vgit)
-map("n", "<leader>gd", ":VGit project_diff_preview<CR>", opt)
+map("n", "<leader>gi", ":VGit project_diff_preview<CR>", opt)
 map("n", "<leader>gc", ":VGit project_commit_preview<CR>", opt)
 -- 向上向下翻diff
 map("n", "g<Up>", ":VGit hunk_up<CR>", opt)
@@ -200,9 +200,10 @@ map("n", "g<Down>", ":VGit hunk_down<CR>", opt)
 -- lsp 回调函数快捷键设置
 pluginKeys.mapLSP = function(mapbuf)
   -- go xx
-  mapbuf("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opt)
+  --mapbuf("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opt)
 end
 -- 上面部分代码不行，直接使用map试试
+map("n", "gd", ":lua vim.lsp.buf.definition()<CR>", opt)
 map("n", "grn", ":Lspsaga rename<CR>", opt)
 map("n", "gca", ":Lspsaga code_action<CR>", opt)
 map("n", "gh", ":Lspsaga hover_doc<CR>", opt)
@@ -239,5 +240,17 @@ pluginKeys.cmp = function(cmp)
         ["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(4), {"i", "c"}),
     }
 end
+
+-- clojure相关
+-- 进入命令模式并链接
+map("n", "<leader>mc", ":ConjureConnect", opt)
+-- 打开log窗口
+map("n", "<leader>mv", ":ConjureLogVSplit<CR>", opt)
+-- 关闭
+map("n", "<leader>mb", ":ConjureLogCloseVisible<CR>", opt)
+-- eval当前form
+map("n", "<leader>me", ":ConjureEvalRootForm<CR>", opt)
+-- eval整个文件
+map("n", "<leader>mf", ":ConjureEvalFile<CR>", opt)
 
 return pluginKeys

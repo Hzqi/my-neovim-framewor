@@ -32,11 +32,13 @@ require("mason-lspconfig").setup({
     "lua_ls",
     "jsonls",
     "html",
+    "clojure_lsp",
   }
 })
 
 local servers = {
   lua_ls = require("lsp.config.lua"), -- lua/lsp/config/lua.lua
+  clojure_lsp = require("lsp.config.clojure"),
 }
 
 for name, config in pairs(servers) do
