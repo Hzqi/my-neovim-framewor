@@ -226,12 +226,11 @@ pluginKeys.cmp = function(cmp)
         }),
         -- 上一个
         ["<C-k>"] = cmp.mapping.select_prev_item(),
-        ["<D-Up>"] = cmp.mapping.select_prev_item(),
         ["<Up>"] = cmp.mapping.select_prev_item(),
         -- 下一个
         ["<C-j>"] = cmp.mapping.select_next_item(),
         ["<Down>"] = cmp.mapping.select_next_item(),
-        --[">"] = cmp.mapping.select_next_item(),
+        ["<Tab>"] = cmp.mapping.select_next_item(),
         -- 确认
         ["<CR>"] = cmp.mapping.confirm({
             select = true,

@@ -11,7 +11,8 @@ autopairs.setup({
     javascript = { "template_string" },
     java = false, -- don't check treesitter on java
   },
-  ignored_next_char = "%'"
+  ignored_next_char = "%'",
+  enable_check_bracket_line = false,
 })
 -- If you want insert `(` after select function or method item
 local cmp_autopairs = require("nvim-autopairs.completion.cmp")
