@@ -67,6 +67,12 @@ packer.startup({
         -- lsp查看功能的美化
         use("tami5/lspsaga.nvim" )
 
+        -- 代码格式化
+        -- use("mhartington/formatter.nvim")
+        
+        -- nvim-autopairs
+        use("windwp/nvim-autopairs")
+
         -- clojure
         use("Olical/conjure")
 

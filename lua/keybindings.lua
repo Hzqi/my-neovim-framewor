@@ -116,7 +116,9 @@ map("n", "<D-Right>", "4l", opt)
 
 -- insert 模式下，跳到行首行尾
 map("i", "<C-h>", "<ESC>I", opt)
+map("i", "<D-Left>", "<ESC>I", opt)
 map("i", "<C-l>", "<ESC>A", opt)
+map("i", "<D-Right>", "<ESC>A", opt)
 
 -- 插件快捷键
 local pluginKeys = {}

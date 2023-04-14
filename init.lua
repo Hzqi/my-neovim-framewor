@@ -28,3 +28,6 @@ require("lsp.cmp")
 require("lsp.ui")
 -- indent-blankline 范围线
 require("plugin-config.indent-blankline")
+-- autopairs
+require("plugin-config.nvim-autopairs")
+
