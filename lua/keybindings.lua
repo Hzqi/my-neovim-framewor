@@ -120,6 +120,12 @@ map("i", "<D-Left>", "<ESC>I", opt)
 map("i", "<C-l>", "<ESC>A", opt)
 map("i", "<D-Right>", "<ESC>A", opt)
 
+-- visual 模式下快速移动（Mac）
+map("v", "<D-Up>", "4k", opt)
+map("v", "<D-Down>", "4j", opt)
+map("v", "<D-Left>", "4h", opt)
+map("v", "<D-Right>", "4l", opt)
+
 -- 插件快捷键
 local pluginKeys = {}
 
@@ -252,6 +258,6 @@ map("n", "<leader>mb", ":ConjureLogCloseVisible<CR>", opt)
 -- eval当前form
 map("n", "<leader>me", ":ConjureEvalRootForm<CR>", opt)
 -- eval整个文件
-map("n", "<leader>mf", ":ConjureEvalFile<CR>", opt)
+map("n", "<leader>mf", ":ConjureEvalBuf<CR>", opt)
 
 return pluginKeys
