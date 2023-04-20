@@ -47,7 +47,7 @@ db.setup({
       {
         icon = "✎  ",
         desc = "Edit Projects                       ",
-        action = "edit ~/.local/share/nvim/project_nvim/project_history",
+        action = "sv | edit ~/.local/share/nvim/project_nvim/project_history",
       },
     },
     footer = {
