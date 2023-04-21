@@ -126,6 +126,11 @@ map("v", "<D-Down>", "4j", opt)
 map("v", "<D-Left>", "4h", opt)
 map("v", "<D-Right>", "4l", opt)
 
+-- (MasOS) 选中单词
+map("n", "<D-e>", "<ESC>viw", opt)
+map("v", "<D-e>", "iw", opt)
+map("i", "<D-e>", "<ESC>viw", opt)
+
 -- 插件快捷键
 local pluginKeys = {}
 

@@ -6,7 +6,6 @@ packer.startup({
         use({'nvim-treesitter/nvim-treesitter', run = ":TSUpdate"})
         -- 你的插件列表...
         -- conjure
-        -- use 'Olical/conjure'
 
         -- UI theme
         -- tokyonight
@@ -69,9 +68,12 @@ packer.startup({
 
         -- 代码格式化
         -- use("mhartington/formatter.nvim")
-        
+
         -- nvim-autopairs
         use("windwp/nvim-autopairs")
+
+        -- surround
+        use("ur4ltz/surround.nvim")
 
         -- clojure
         use("Olical/conjure")

@@ -30,4 +30,5 @@ require("lsp.ui")
 require("plugin-config.indent-blankline")
 -- autopairs
 require("plugin-config.nvim-autopairs")
-
+-- sorround
+require("plugin-config.surround")
