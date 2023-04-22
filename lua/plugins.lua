@@ -18,7 +18,7 @@ packer.startup({
         use("EdenEast/nightfox.nvim")
 
         -- nvim-tree
-        use({ "kyazdani42/nvim-tree.lua", requires = "kyazdani42/nvim-web-devicons" })
+        use({ "kyazdani42/nvim-tree.lua", requires = "kyazdani42/nvim-web-devicons", commit = "8f392fa763b7ee80a48c714b630acaf6d1fe1854" })
 
         -- bufferline
         use({ "akinsho/bufferline.nvim", requires = { "kyazdani42/nvim-web-devicons", "moll/vim-bbye" }})
