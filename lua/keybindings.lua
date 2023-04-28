@@ -42,6 +42,24 @@ map("i", "<D-S-z>", "<ESC>:redo<CR>A", opt)
 map("n", "<D-s>", ":w<CR>", opt)
 map("i", "<D-s>", "<ESC>:w<CR>A", opt)
 
+-- 为兼容iterm2
+map("n", "<A-v>", "p", opt)
+map("i", "<A-v>", "<C-R>+", opt)
+map("v", "<A-v>", "<C-R>+", opt)
+-- 复制
+map("n", "<A-c>", "", opt)
+map("i", "<A-c>", "", opt)
+map("v", "<A-c>", "y", opt)
+-- 撤回
+map("n", "<A-z>", ":undo<CR>", opt)
+map("i", "<A-z>", "<ESC>:undo<CR>A", opt)
+-- 重做
+map("n", "<A-S-z>", ":redo<CR>", opt)
+map("i", "<A-S-z>", "<ESC>:redo<CR>A", opt)
+-- 保存
+map("n", "<A-s>", ":w<CR>", opt)
+map("i", "<A-s>", "<ESC>:w<CR>A", opt)
+
 -- 取消 s 默认功能
 map("n", "s", "", opt)
 map("n", "r", "", opt)
@@ -60,16 +78,16 @@ map("n", "QQ", ":q!<CR>", opt)
 -- Alt + hjkl  窗口之间跳转
 -- 向左
 map("n", "<A-h>", "<C-w>h", opt)
-map("n", "<A-Left>", "<C-w>h", opt)
+map("n", "<S-Left>", "<C-w>h", opt)
 -- 向上
 map("n", "<A-k>", "<C-w>k", opt)
-map("n", "<A-Up>", "<C-w>k", opt)
+map("n", "<S-Up>", "<C-w>k", opt)
 -- 向下
 map("n", "<A-j>", "<C-w>j", opt)
-map("n", "<A-Down>", "<C-w>j", opt)
+map("n", "<S-Down>", "<C-w>j", opt)
 -- 向右
 map("n", "<A-l>", "<C-w>l", opt)
-map("n", "<A-Right>", "<C-w>l", opt)
+map("n", "<S-Right>", "<C-w>l", opt)
 
 -- 窗口左右比例
 map("n", "s<Left>", ":vertical resize -10<CR>", opt)
@@ -82,10 +100,10 @@ map("n", "s<Down>", ":resize -10<CR>", opt)
 map("n", "<leader>T", ":sp | terminal<CR>", opt)
 --map("n", "<leader>vt", ":vsp | terminal<CR>", opt)
 map("t", "<Esc>", "<C-\\><C-n>", opt)
-map("t", "<A-Left>", [[ <C-\><C-N><C-w>h ]], opt)
-map("t", "<A-Down>", [[ <C-\><C-N><C-w>j ]], opt)
-map("t", "<A-Up>", [[ <C-\><C-N><C-w>k ]], opt)
-map("t", "<A-Right>", [[ <C-\><C-N><C-w>l ]], opt)
+map("t", "<S-Left>", [[ <C-\><C-N><C-w>h ]], opt)
+map("t", "<S-Down>", [[ <C-\><C-N><C-w>j ]], opt)
+map("t", "<S-Up>", [[ <C-\><C-N><C-w>k ]], opt)
+map("t", "<S-Right>", [[ <C-\><C-N><C-w>l ]], opt)
 
 -- visual模式下缩进代码
 -- 反缩进
@@ -112,7 +130,11 @@ map("n", "<C-d>", "9j", opt)
 map("n", "<D-Up>", "4k", opt)
 map("n", "<D-Down>", "4j", opt)
 map("n", "<D-Left>", "4h", opt)
-map("n", "<D-Right>", "4l", opt) 
+map("n", "<D-Right>", "4l", opt)
+map("n", "<A-Up>", "6k", opt)
+map("n", "<A-Down>", "6j", opt)
+map("n", "<A-Left>", "6h", opt)
+map("n", "<A-Right>", "6l", opt)
 
 -- insert 模式下，跳到行首行尾
 map("i", "<C-h>", "<ESC>I", opt)
@@ -125,11 +147,19 @@ map("v", "<D-Up>", "4k", opt)
 map("v", "<D-Down>", "4j", opt)
 map("v", "<D-Left>", "4h", opt)
 map("v", "<D-Right>", "4l", opt)
+map("v", "<A-Up>", "6k", opt)
+map("v", "<A-Down>", "6j", opt)
+map("v", "<A-Left>", "6h", opt)
+map("v", "<A-Right>", "6l", opt)
 
 -- (MasOS) 选中单词
 map("n", "<D-e>", "<ESC>viw", opt)
 map("v", "<D-e>", "iw", opt)
 map("i", "<D-e>", "<ESC>viw", opt)
+
+map("n", "<A-e>", "<ESC>viw", opt)
+map("v", "<A-e>", "iw", opt)
+map("i", "<A-e>", "<ESC>viw", opt)
 
 -- 插件快捷键
 local pluginKeys = {}
