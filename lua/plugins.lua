@@ -16,6 +16,9 @@ packer.startup({
         use("ful1e5/onedark.nvim")
         -- nightfox
         use("EdenEast/nightfox.nvim")
+        -- gruvbox
+        use('rmehri01/onenord.nvim')
+
 
         -- nvim-tree
         use({ "kyazdani42/nvim-tree.lua", requires = "kyazdani42/nvim-web-devicons", commit = "8f392fa763b7ee80a48c714b630acaf6d1fe1854" })
