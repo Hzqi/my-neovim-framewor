@@ -136,10 +136,10 @@ lspsaga.setup {
     ly_botright = false,
     keys = {
       shuttle = '[w',
-      toggle_or_open = 'o',
+      toggle_or_open = '<CR>',
       vsplit = 's',
       split = 'i',
-      tabe = '<CR>',
+      tabe = 't',
       tabnew = 'r',
       quit = 'q',
       close = '<C-c>k',
