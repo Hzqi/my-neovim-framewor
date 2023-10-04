@@ -67,7 +67,9 @@ packer.startup({
         -- indent-blankline 范围线
         use("lukas-reineke/indent-blankline.nvim")
         -- lsp查看功能的美化
-        use("tami5/lspsaga.nvim" )
+        -- use("tami5/lspsaga.nvim" )
+        use("nvimdev/lspsaga.nvim")
+        -- use { 'kkharji/lspsaga.nvim' }
 
         -- 代码格式化
         -- use("mhartington/formatter.nvim")

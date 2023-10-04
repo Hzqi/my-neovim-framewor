@@ -259,7 +259,7 @@ map("n", "gd", ":lua vim.lsp.buf.definition()<CR>", opt)
 map("n", "grn", ":Lspsaga rename<CR>", opt)
 map("n", "gca", ":Lspsaga code_action<CR>", opt)
 map("n", "gh", ":Lspsaga hover_doc<CR>", opt)
-map("n", "gr", ":Lspsaga lsp_finder<CR>", opt)
+map("n", "gr", ":Lspsaga finder<CR>", opt)
 map("n", "gp", ":Lspsaga show_line_diagnostics<CR>", opt)
 
 -- 补全
