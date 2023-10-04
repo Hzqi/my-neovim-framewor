@@ -227,9 +227,18 @@ pluginKeys.nvimTreeList = {
   { key = "s", action = "system_open" },
 }
 
--- treesitter
--- 全文件格式化
-map("n", "F=", "gg=G", opt)
+-- formatting
+function FormatFunction()
+  vim.lsp.buf.format({
+    async = true,
+    range = {
+      ["start"] = vim.api.nvim_buf_get_mark(0, "<"),
+      ["end"] = vim.api.nvim_buf_get_mark(0, ">"),
+    }
+  })
+end
+map("n", "Ff", ":lua vim.lsp.buf.format()<CR>", opt)
+map("v", "ff", ":lua FormatFunction()<CR>", opt)
 
 
 -- git (vgit)

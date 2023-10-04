@@ -30,7 +30,7 @@ db.setup({
     },
     center = {
       {
-        icon = "⚡ ",
+        icon = "✮  ",
         desc = "Projects                            ",
         action = "Telescope projects",
       },
@@ -43,6 +43,11 @@ db.setup({
         icon = "  ",
         desc = "Edit keybindings                    ",
         action = "edit ~/.config/nvim/lua/keybindings.lua",
+      },
+      {
+        icon = "⌘  ",
+        desc = "Edit Plugins                        ",
+        action = "edit ~/.config/nvim/lua/plugins.lua",
       },
       {
         icon = "✎  ",
