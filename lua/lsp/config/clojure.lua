@@ -7,8 +7,8 @@ local opts = {
     root_dir = lsp.util.root_pattern("project.clj", "deps.edn", "build.boot", "shadow-cljs.edn", ".git", "bb.edn"),
   },
   on_attach = function(client, bufnr)
-    client.resolved_capabilities.document_formatting = true
-    client.resolved_capabilities.document_range_formatting = true
+    client.resolved_capabilities.document_formatting = false
+    client.resolved_capabilities.document_range_formatting = false
     local function buf_set_keymap( ...)
       vim.api.nvim_buf_set_keymap(bufnr, ... )
     end
