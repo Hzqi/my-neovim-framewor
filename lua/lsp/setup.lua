@@ -43,6 +43,7 @@ local servers = {
   clojure_lsp = require("lsp.config.clojure"),
   tsserver = require("lsp.config.js"),
   jedi_language_server = require("lsp.config.python"),
+  flutter_tools = require("lsp.config.flutter"),
 }
 
 for name, config in pairs(servers) do
@@ -54,3 +55,4 @@ for name, config in pairs(servers) do
     lspconfig[name].setup({})
   end
 end
+

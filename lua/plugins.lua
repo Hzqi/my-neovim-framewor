@@ -83,6 +83,12 @@ packer.startup({
         -- clojure
         use("Olical/conjure")
 
+        -- dart, flutter
+        use({'akinsho/flutter-tools.nvim', requires = {
+          'nvim-lua/plenary.nvim',
+          -- 'stevearc/dressing.nvim', -- optional for vim.ui.select
+        }})
+
     end,
     config = {
         -- 并发数限制
