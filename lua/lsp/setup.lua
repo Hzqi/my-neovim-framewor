@@ -34,7 +34,8 @@ require("mason-lspconfig").setup({
     "html",
     "clojure_lsp",
     "jedi_language_server",
-    "tsserver"
+    "tsserver",
+    "gopls"
   }
 })
 
@@ -44,6 +45,7 @@ local servers = {
   tsserver = require("lsp.config.js"),
   jedi_language_server = require("lsp.config.python"),
   flutter_tools = require("lsp.config.flutter"),
+  gopls = require("lsp.config.go"),
 }
 
 for name, config in pairs(servers) do

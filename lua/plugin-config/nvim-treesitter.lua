@@ -22,7 +22,8 @@ treesitter.setup({
     "markdown_inline",
     "python",
     "dart",
-    "yaml"
+    "yaml",
+    "go"
   },
   -- 启用代码高亮模块
   highlight = {
