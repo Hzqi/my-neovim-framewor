@@ -23,7 +23,8 @@ treesitter.setup({
     "python",
     "dart",
     "yaml",
-    "go"
+    "go",
+    "elixir"
   },
   -- 启用代码高亮模块
   highlight = {
