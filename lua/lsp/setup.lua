@@ -38,6 +38,7 @@ require("mason-lspconfig").setup({
     "gopls",
     "elixirls",
     "jdtls",
+    "volar",
   }
 })
 
@@ -50,6 +51,7 @@ local servers = {
   gopls = require("lsp.config.go"),
   elixirls = require("lsp.config.elixir"),
   jdtls = require("lsp.config.java"),
+  volar = require("lsp.config.vue"),
 }
 
 for name, config in pairs(servers) do

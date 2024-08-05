@@ -92,6 +92,9 @@ packer.startup({
         -- java
         use('mfussenegger/nvim-jdtls')
 
+        -- vue
+        use('posva/vim-vue')
+
     end,
     config = {
         -- 并发数限制

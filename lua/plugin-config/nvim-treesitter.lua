@@ -24,7 +24,8 @@ treesitter.setup({
     "dart",
     "yaml",
     "go",
-    "elixir"
+    "elixir",
+    "vue",
   },
   -- 启用代码高亮模块
   highlight = {
@@ -41,4 +42,11 @@ treesitter.setup({
       scope_incremental = "<TAB>",
     },
   },
+})
+
+-- 增加文件别名
+vim.filetype.add({
+  extension = {
+    yjpl = "vue"
+  }
 })
