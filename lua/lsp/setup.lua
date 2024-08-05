@@ -36,7 +36,8 @@ require("mason-lspconfig").setup({
     "jedi_language_server",
     "tsserver",
     "gopls",
-    "elixirls"
+    "elixirls",
+    "jdtls",
   }
 })
 
@@ -48,6 +49,7 @@ local servers = {
   -- flutter_tools = require("lsp.config.flutter"),
   gopls = require("lsp.config.go"),
   elixirls = require("lsp.config.elixir"),
+  jdtls = require("lsp.config.java"),
 }
 
 for name, config in pairs(servers) do

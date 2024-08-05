@@ -89,6 +89,9 @@ packer.startup({
           -- 'stevearc/dressing.nvim', -- optional for vim.ui.select
         }})
 
+        -- java
+        use('mfussenegger/nvim-jdtls')
+
     end,
     config = {
         -- 并发数限制
