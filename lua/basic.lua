@@ -86,3 +86,5 @@ vim.o.showmode = false
 
 -- neovide 透明背景
 vim.g.neovide_transparency = 0.8
+-- neovide 背景模糊
+vim.g.neovide_window_blurred = true
