@@ -10,7 +10,8 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- neovide中的mac alt is meta
-vim.g.neovide_input_macos_alt_is_meta = true
+-- vim.g.neovide_input_macos_alt_is_meta = true
+vim.g.neovide_input_macos_option_key_is_meta = "both"
 
 -- 由于要设置很多快捷键，所以先保存本地变量。
 -- map('模式', '按键', '映射为', 'options')
