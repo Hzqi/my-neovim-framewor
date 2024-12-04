@@ -2,7 +2,7 @@ local lsp = require("lspconfig")
 
 local opts = {
   settings = {
-    cmd = { "tsserver" },
+    cmd = { "ts_ls" },
     filetypes = { "javascript", "typescript" }
   },
   on_attach = function(client, bufnr)

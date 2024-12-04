@@ -32,3 +32,5 @@ require("plugin-config.indent-blankline")
 require("plugin-config.nvim-autopairs")
 -- sorround
 require("plugin-config.surround")
+-- fzf-lua
+require("plugin-config.fzf-lua")

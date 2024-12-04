@@ -34,6 +34,12 @@ packer.startup({
         use { 'nvim-telescope/telescope.nvim', requires = { "nvim-lua/plenary.nvim" } }
         -- telescope extensions
         use "LinArcX/telescope-env.nvim"
+        use { "ibhagwan/fzf-lua",
+              -- optional for icon support
+              requires = { "nvim-tree/nvim-web-devicons" }
+              -- or if using mini.icons/mini.nvim
+              -- requires = { "echasnovski/mini.icons" }
+        }
 
         -- dashboard-nvim
         use({"glepnir/dashboard-nvim"})
