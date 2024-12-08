@@ -26,6 +26,10 @@ packer.startup({
         -- bufferline
         use({ "akinsho/bufferline.nvim", requires = { "kyazdani42/nvim-web-devicons", "moll/vim-bbye" }})
 
+        -- buffer manager
+        use({'nvim-lua/plenary.nvim'})
+        use({'j-morano/buffer_manager.nvim'})
+
         -- lualine
         use({ "nvim-lualine/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons" } })
         use("arkav/lualine-lsp-progress")

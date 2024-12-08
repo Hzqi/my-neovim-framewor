@@ -181,9 +181,10 @@ map("n", "<leader>bc", ":BufferLinePickClose<CR>", opt)
 -- Telescope
 -- 查找文件
 map("n", "<leader>p", ":Telescope find_files<CR>", opt)
+map("n", "<leader>pp", ":lua require('buffer_manager.ui').toggle_quick_menu()<CR>", opt)
 -- 全局搜索
--- map("n", "<leader>f", ":Telescope live_grep<CR>", opt)
-map("n", "<leader>f", ":FzfLua lsp_live_workspace_symbols<CR>", opt)
+map("n", "<leader>f", ":Telescope live_grep<CR>", opt)
+map("n", "<leader>ff", ":FzfLua lsp_live_workspace_symbols<CR>", opt)
 
 -- Telescope 列表中 插入模式快捷键
 pluginKeys.telescopeList = {
