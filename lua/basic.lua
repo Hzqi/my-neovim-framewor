@@ -88,3 +88,14 @@ vim.o.showmode = false
 vim.g.neovide_transparency = 0.8
 -- neovide 背景模糊
 vim.g.neovide_window_blurred = true
+
+-- transparent background
+vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'FloatBorder', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'Pmenu', { bg = 'none' })
+
+-- fold
+vim.opt.foldmethod = 'expr'
+vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
+vim.cmd([[ set nofoldenable ]])
