@@ -51,16 +51,17 @@ vim.g.rainbow_delimiters = { highlight = highlight }
 
 indent_blankline.setup({
   indent = { 
-    char = "╎",
+    char = "┊",
     tab_char = " ",
     highlight = highlight,
+    smart_indent_cap = true
   },
   whitespace = {
     --highlight = highlight,
     remove_blankline_trail = true,
   },
   scope = {
-    char = "▎",
+    char = '┃', -- '│', --"▎",
     highlight = highlight,
   },
   exclude = {
