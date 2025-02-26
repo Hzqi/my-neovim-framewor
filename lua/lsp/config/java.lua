@@ -21,6 +21,10 @@ local opts = {
     '--add-opens', 'java.base/java.util=ALL-UNNAMED',
     '--add-opens', 'java.base/java.lang=ALL-UNNAMED',
 
+    -- lombok
+    '-javaagent:/home/jacky/lombok/lombok.jar',
+    '-Xbootclasspath/a:/home/jacky/lombok/lombok.jar',
+
     '-jar',
     '/home/jacky/.local/share/nvim/mason/packages/jdtls/plugins/org.eclipse.equinox.launcher_1.6.900.v20240613-2009.jar',
     '-configuration',

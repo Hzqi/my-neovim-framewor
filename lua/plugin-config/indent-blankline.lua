@@ -63,6 +63,7 @@ indent_blankline.setup({
   scope = {
     char = '┃', -- '│', --"▎",
     highlight = highlight,
+    show_exact_scope = true,
   },
   exclude = {
     filetypes = {
