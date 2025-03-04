@@ -32,25 +32,28 @@ require("mason-lspconfig").setup({
     "lua_ls",
     "jsonls",
     "html",
-    "clojure_lsp",
+    --"clojure_lsp",
     "jedi_language_server",
     "ts_ls",
-    "gopls",
-    "elixirls",
+    --"gopls",
+    --"elixirls",
     "jdtls",
+    --"java_language_server",
     "volar",
   }
 })
 
 local servers = {
   lua_ls = require("lsp.config.lua"), -- lua/lsp/config/lua.lua
-  clojure_lsp = require("lsp.config.clojure"),
+  --clojure_lsp = require("lsp.config.clojure"),
   ts_ls = require("lsp.config.js"),
   jedi_language_server = require("lsp.config.python"),
   --flutter_tools = require("lsp.config.flutter"),
-  gopls = require("lsp.config.go"),
-  elixirls = require("lsp.config.elixir"),
-  jdtls = require("lsp.config.java"),
+  --gopls = require("lsp.config.go"),
+  --elixirls = require("lsp.config.elixir"),
+  --jdtls = require("lsp.config.java"),
+  jdtls = require("lsp.config.javals"),
+  --java_language_server = require("lsp.config.javals"),
   volar = require("lsp.config.vue"),
 }
 
