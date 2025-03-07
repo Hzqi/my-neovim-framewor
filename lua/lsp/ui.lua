@@ -226,6 +226,10 @@ lspsaga.setup {
   },
 }
 
+vim.diagnostic.config({
+  severity_sort = true,
+})
+
 local M ={}
 -- 为 cmp.lua 提供参数格式
 M.formatting = {
