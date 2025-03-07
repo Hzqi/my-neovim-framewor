@@ -60,6 +60,11 @@ map("i", "<A-S-z>", "<ESC>:redo<CR>A", opt)
 -- 保存
 map("n", "<A-s>", ":w<CR>", opt)
 map("i", "<A-s>", "<ESC>:w<CR>A", opt)
+-- windows + powertoys saves
+map("n", "<C-s>", ":w<CR>", opt)
+map("i", "<C-s>", "<ESC>:w<CR>A", opt)
+map("n", "<C-v>", "p", opt)
+map("i", "<C-v>", "<C-R>+", opt)
 
 -- 取消 s 默认功能
 map("n", "s", "", opt)
@@ -258,12 +263,23 @@ pluginKeys.mapLSP = function(mapbuf)
   --mapbuf("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opt)
 end
 -- 上面部分代码不行，直接使用map试试
-map("n", "gd", ":lua vim.lsp.buf.definition()<CR>", opt)
-map("n", "grn", ":Lspsaga rename<CR>", opt)
-map("n", "gca", ":Lspsaga code_action<CR>", opt)
-map("n", "gh", ":Lspsaga hover_doc<CR>", opt)
-map("n", "gr", ":Lspsaga finder<CR>", opt)
-map("n", "gp", ":Lspsaga show_line_diagnostics<CR>", opt)
+-- safe_run
+local function safe_run(lspsaga_cmd, fallback)
+  return function()
+    local success, _ = pcall(vim.cmd, lspsaga_cmd)
+    if not success then
+      fallback()
+    end
+  end
+end
+vim.keymap.set("n", "gd", safe_run("Lspsaga goto_definition", vim.lsp.buf.definition), opt)
+vim.keymap.set("n", "grn", safe_run("Lspsaga rename", vim.lsp.buf.rename), opt)
+vim.keymap.set("n", "gca", safe_run("Lspsaga code_action", vim.lsp.buf.code_action), opt)
+vim.keymap.set("n", "gh", safe_run("Lspsaga hover_doc", vim.lsp.buf.hover), opt)
+vim.keymap.set("n", "gr", safe_run("Lspsaga finder", vim.lsp.buf.references), opt)
+vim.keymap.set("n", "gp", safe_run("Lspsaga show_line_diagnostics", function()
+  vim.diagnostic.open_float(nil, { focusable = false })
+end), opt)
 
 -- 补全
 -- nvim-cmp 自动补全
