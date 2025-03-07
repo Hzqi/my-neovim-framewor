@@ -272,7 +272,9 @@ local function safe_run(lspsaga_cmd, fallback)
     end
   end
 end
-vim.keymap.set("n", "gd", safe_run("Lspsaga goto_definition", vim.lsp.buf.definition), opt)
+local lsp_utils = require("lsp.utils")
+vim.keymap.set("n", "gd", safe_run("Lspsaga peek_definition", lsp_utils.preview_definition ), opt)
+vim.keymap.set("n", "gdd", safe_run("Lspsaga goto_definition", vim.lsp.buf.definition), opt)
 vim.keymap.set("n", "grn", safe_run("Lspsaga rename", vim.lsp.buf.rename), opt)
 vim.keymap.set("n", "gca", safe_run("Lspsaga code_action", vim.lsp.buf.code_action), opt)
 vim.keymap.set("n", "gh", safe_run("Lspsaga hover_doc", vim.lsp.buf.hover), opt)
