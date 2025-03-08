@@ -101,6 +101,7 @@ packer.startup({
 
         -- java
         --use('mfussenegger/nvim-jdtls')
+        --use("JavaHello/spring-boot.nvim")
         use({'nvim-java/nvim-java', requires = {
           'nvim-java/nvim-java-core',
           'nvim-java/nvim-java-dap',
@@ -112,6 +113,10 @@ packer.startup({
         }})
         -- dap
         use('mfussenegger/nvim-dap')
+        use { "rcarriga/nvim-dap-ui", requires = {
+          "mfussenegger/nvim-dap",
+          "nvim-neotest/nvim-nio"
+        }}
 
         -- vue
         use('posva/vim-vue')

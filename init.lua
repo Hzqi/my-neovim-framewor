@@ -26,6 +26,8 @@ require("lsp.setup")
 require("lsp.cmp")
 -- lsp-ui
 require("lsp.ui")
+-- dap-ui
+require("plugin-config.dap")
 -- indent-blankline 范围线
 require("plugin-config.indent-blankline")
 -- autopairs

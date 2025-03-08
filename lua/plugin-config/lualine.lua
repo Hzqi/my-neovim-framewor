@@ -5,6 +5,13 @@ if not status then
   return
 end
 
+-- Function to sanitize LSP progress output
+local function safe_lsp_progress()
+  local ok, lsp_status = pcall(vim.lsp.status) -- Prevents crashes
+  if not ok then return "" end -- Return empty string if error occurs
+  return lsp_status:gsub("[<>]", "") -- Remove illegal characters
+end
+
 lualine.setup({
     options = {
       theme = "tokyonight",
@@ -17,7 +24,8 @@ lualine.setup({
       lualine_c = {
         "filename",
         {
-          "lsp_progress",
+          --"lsp_progress",
+          safe_lsp_progress, -- Use sanitized LSP progress
           spinner_symbols = { " ", " ", " ", " ", " ", " " },
         },
       },
