@@ -13,7 +13,7 @@ dap.listeners.before.event_exited.dapui_config = function()
   dapui.close()
 end
 
-vim.api.nvim_create_user_command("DapUIOpen", function()
-  dapui.open()
+vim.api.nvim_create_user_command("DapUIToggle", function()
+  dapui.toggle()
 end, {})
 
