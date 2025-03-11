@@ -1,5 +1,9 @@
 -- 基础设置
 require('basic')
+-- utils
+require('utils')
+-- notify
+require("plugin-config.nvim-notify")
 -- 按键配置
 require('keybindings')
 -- 插件管理
