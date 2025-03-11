@@ -93,6 +93,28 @@ return {
       end)
     end, {})
 
+    vim.api.nvim_create_user_command("JavaAddWorkspaces", function() 
+      vim.ui.input({ prompt = "Enter folder path for all subfolders: " }, function(path)
+        local uv = vim.loop
+        local handle = uv.fs_scandir(path)
+        local dirs = {}
+        if handle then
+          while true do
+            local name, t = uv.fs_scandir_next(handle)
+            if not name then break end
+            if t == "directory" then
+              table.insert(dirs, path .. name)
+            end
+          end
+        end
+
+        for _, folder in ipairs(dirs) do
+          local folder_path = vim.fn.fnamemodify(folder, ":p")
+          vim.lsp.buf.add_workspace_folder(folder_path)
+        end
+      end)
+    end, {})
+
     vim.api.nvim_create_user_command("DapInitConfig", function()
       local dap = require("dap")
       dap.configurations.java = {
