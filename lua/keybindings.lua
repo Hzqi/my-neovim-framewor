@@ -113,6 +113,12 @@ map("t", "<S-Down>", [[ <C-\><C-N><C-w>j ]], opt)
 map("t", "<S-Up>", [[ <C-\><C-N><C-w>k ]], opt)
 map("t", "<S-Right>", [[ <C-\><C-N><C-w>l ]], opt)
 
+-- float window
+map("n", "f<Right>", ":lua move_window('right')<CR>", opt)
+map("n", "f<Left>", ":lua move_window('left')<CR>", opt)
+map("n", "f<Up>", ":lua move_window('up')<CR>", opt)
+map("n", "f<Down>", ":lua move_window('down')<CR>", opt)
+
 -- visual模式下缩进代码
 -- 反缩进
 map("v", "<", "<gv", opt)
