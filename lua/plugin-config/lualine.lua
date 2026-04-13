@@ -12,6 +12,14 @@ local function safe_lsp_progress()
   return lsp_status:gsub("[<>]", "") -- Remove illegal characters
 end
 
+local function safe_status_component()
+  local ok, result = pcall(function()
+    -- Replace this with your actual status function logic
+    return vim.fn.getcwd()
+  end)
+  return ok and result or "Error"
+end
+
 lualine.setup({
     options = {
       theme = "tokyonight",
@@ -25,7 +33,7 @@ lualine.setup({
         "filename",
         {
           --"lsp_progress",
-          safe_lsp_progress, -- Use sanitized LSP progress
+          safe_status_component, -- Use sanitized LSP progress
           spinner_symbols = { " ", " ", " ", " ", " ", " " },
         },
       },

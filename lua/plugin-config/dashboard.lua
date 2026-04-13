@@ -11,6 +11,16 @@ db.custom_footer = {
   "From VSCode To NVIM~",
 }
 
+local v = vim.version()
+local nvim_version = string.format("nvim %d.%d.%d", v.major, v.minor, v.patch)
+local neovide_version = vim.g.neovide_version or "N/A"
+
+local version_line = string.format(
+  "             [ %s | neovide %s ]                 ",
+  nvim_version,
+  neovide_version
+)
+
 db.setup({
   theme = 'doom',
   config = {
@@ -25,6 +35,7 @@ db.setup({
       [[  ╚═══╝  ╚══════╝╚══════╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝]],
       [[                                                 ]],
       [[             [ version : 1.0.0 ]                 ]],
+      version_line,
       [[]],
       [[]],
     },
@@ -123,6 +134,7 @@ db.custom_header = {
   [[  ╚═══╝  ╚══════╝╚══════╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝]],
   [[                                                 ]],
   [[             [ version : 1.0.0 ]                 ]],
+  version_line,
   [[]],
   [[]],
 }
