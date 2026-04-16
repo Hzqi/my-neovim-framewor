@@ -50,7 +50,7 @@ packer.startup({
         use({"ahmedkhalf/project.nvim", commit = "8c6bad7d22eef1b71144b401c9f74ed01526a4fb"})
 
         -- git
-        use({'tanvirtin/vgit.nvim', requires = {'nvim-lua/plenary.nvim'}, tag="v1.0.5"})
+        use({'tanvirtin/vgit.nvim', requires = {'nvim-lua/plenary.nvim'}, tag="v1.0.6"})
 
         -- lsp相关
         use({ "williamboman/mason.nvim", commit = "b03fb0f20bc1d43daf558cda981a2be22e73ac42" })
