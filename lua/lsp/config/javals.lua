@@ -1,5 +1,3 @@
-local lspconfig = require("lspconfig")
-
 local opts = {
   cmd = {
     vim.fn.expand("$HOME/.local/share/nvim/mason/bin/jdtls"),
@@ -14,7 +12,9 @@ local opts = {
     "-data", vim.fn.expand("$HOME/jdtls/workspace"),
   },
   filetypes = { "java" },
-  root_dir = lspconfig.util.root_pattern('.git', 'mvnw', 'gradlew', 'pom.xml', 'build.gradle'),-- vim.fs.root(0, { '.git', 'mvnw', 'gradlew', 'pom.xml', 'build.gradle' }),
+  root_markers = {
+    '.git', 'mvnw', 'gradlew', 'pom.xml', 'build.gradle'
+  },
   init_options = {
     bundles = {
       --vim.fn.glob(vim.fn.expand("$HOME/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-0.53.1.jar"), 1)

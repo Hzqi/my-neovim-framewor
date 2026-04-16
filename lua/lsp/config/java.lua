@@ -1,4 +1,3 @@
-local lsp = require("lspconfig")
 local jdtls_ok, jdtls = pcall(require, "jdtls")
 
 -- 设置JDTLS的路径
@@ -92,13 +91,6 @@ local opts = {
     require('keybindings').mapLSP(buf_set_keymap)
     print("JDTLS attached!")
     --vim.lsp.buf_attach_client(bufnr, client)
-  end,
-}
-
-return {
-  on_setup = function(server)
-    --server:setup(opts)
-    lsp.jdtls.setup(opts)
   end,
 }
 

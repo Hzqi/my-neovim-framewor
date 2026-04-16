@@ -1,14 +1,21 @@
-local lsp = require("lspconfig")
 
 local opts = {
   settings = {
     cmd = { "clojure-lsp" },
     filetypes = { "clojure", "clojurescript", "edn" },
-    root_dir = lsp.util.root_pattern("project.clj", "deps.edn", "build.boot", "shadow-cljs.edn", ".git", "bb.edn"),
+    -- preferred in 0.11+ when you only need marker names
+    root_markers = {
+      "project.clj",
+      "deps.edn",
+      "build.boot",
+      "shadow-cljs.edn",
+      ".git",
+      "bb.edn",
+    },
   },
   on_attach = function(client, bufnr)
-    client.resolved_capabilities.document_formatting = false
-    client.resolved_capabilities.document_range_formatting = false
+    client.server_capabilities.documentFormattingProvider = false
+    client.server_capabilities.documentRangeFormattingProvider = false
     local function buf_set_keymap( ...)
       vim.api.nvim_buf_set_keymap(bufnr, ... )
     end
@@ -17,8 +24,3 @@ local opts = {
   end,
 }
 
-return {
-  on_setup = function(server)
-    server:setup(opts)
-  end,
-}
